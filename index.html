@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajkumar Ketha | Portfolio</title>
+  <meta name="description" content="Portfolio of Rajkumar Ketha, AI Engineer and Web Developer.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="nav-logo">RK</span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#online">Online</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-close"><i class="fas fa-times" onclick="closeMenu()"></i></li>
+      </ul>
+      <i class="fas fa-bars nav-open" onclick="openMenu()"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-content">
+      <img src="profile.jpg" alt="Rajkumar Ketha" class="hero-pic">
+      <div>
+        <h1 class="hero-name"><span class="hero-greeting">Hi, I'm</span> <span class="hero-highlight">Rajkumar Ketha</span></h1>
+        <a href="https://drive.google.com/file/d/1nrztwepwcpST_fGLiUdkgh46n3PJ850x/view?usp=drive_link" class="btn" target="_blank">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section card" id="about">
+    <h2>About Me</h2>
+    <p class="about-desc">
+      I am Rajkumar Ketha, a B.Tech student specializing in Artificial Intelligence at Pragati Engineering College. I have a strong foundation in Python, web development, and AI, and enjoy building real-world solutions that make a difference. I am passionate about continuous learning, teamwork, and taking on new challenges to grow as a developer and engineer. My goal is to contribute to innovative projects and make a positive impact in the tech industry.
+    </p>
+  </section>
+
+  <!-- Education & Certifications Section -->
+  <section class="edu-cert-section card">
+    <div class="edu-cert-row">
+      <div class="edu-col">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>B.Tech in AI</strong> – Pragati Engineering College, 2026 (75%)</li>
+          <li><strong>Intermediate (MPC)</strong> – GBR Junior College, 2022 (87%)</li>
+          <li><strong>Class X (CBSE)</strong> – DAFNE Asiatic School, 2020 (83%)</li>
+        </ul>
+      </div>
+      <div class="cert-col">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Salesforce AI Associate – AI-driven CRM solutions</li>
+          <li>ServiceNow System Administrator</li>
+          <li>ServiceNow Application Developer</li>
+          <li>NPTEL – Introduction to Machine Learning</li>
+          <li>AICTE-Google – AI-ML Virtual Internship</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Find Me Online -->
+  <section class="online-section card" id="online">
+    <h2>Find Me Online</h2>
+    <div class="online-cards">
+      <a href="https://www.linkedin.com/in/raj-ketha-985244259/" target="_blank" class="online-card"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+      <a href="https://github.com/Rajketha" target="_blank" class="online-card"><i class="fab fa-github"></i><span>GitHub</span></a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section card" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-stars">
+      <div class="skill-star"><span>Python</span><span class="stars">★★★★★</span></div>
+      <div class="skill-star"><span>C</span><span class="stars">★★★☆☆</span></div>
+      <div class="skill-star"><span>JavaScript</span><span class="stars">★★★☆☆</span></div>
+      <div class="skill-star"><span>React.js</span><span class="stars">★★☆☆☆</span></div>
+      <div class="skill-star"><span>Node.js</span><span class="stars">★★★☆☆</span></div>
+      <div class="skill-star"><span>SQL</span><span class="stars">★★★☆☆</span></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section card" id="projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <img src="sharenplay.png" alt="ShareNPlay">
+        <div>
+          <h3>ShareNPlay</h3>
+          <p>Real-time multiplayer mini-games and secure file sharing. Built with React, Node.js, Socket.IO, and QR codes.</p>
+          <a href="https://github.com/Rajketha/ShareNPlay" target="_blank" class="btn">View on GitHub</a>
+        </div>
+      </div>
+      <!-- Add more project cards here if needed -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section card" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-row">
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> ketharaj0@gmail.com</p>
+      </div>
+      <div class="contact-form">
+        <form action="https://formsubmit.co/ketharaj0@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting me!">
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Thank you for visiting my portfolio! &copy; Rajkumar Ketha 2024</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
