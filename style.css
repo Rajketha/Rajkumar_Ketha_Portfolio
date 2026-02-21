@@ -42,10 +42,10 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--bg-main);
-  /* A nice subtle animated glowing background */
-  background: radial-gradient(circle at 15% 50%, rgba(100, 255, 218, 0.05), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(100, 255, 218, 0.03), transparent 25%),
-    linear-gradient(-45deg, #0A192F, #0A1428, #112240, #081221);
+  /* A richer, somewhat lighter steel-blue animated gradient */
+  background: radial-gradient(circle at 15% 50%, rgba(100, 255, 218, 0.08), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(100, 255, 218, 0.05), transparent 30%),
+    linear-gradient(-45deg, #1A365D, #2A4365, #112240, #1E3A8A);
   background-size: 400% 400%;
   animation: darkGradientMove 20s ease infinite;
   color: var(--text-secondary);
