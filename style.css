@@ -324,8 +324,6 @@ a {
 .about-pic {
   width: 100%;
   border-radius: 4px;
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1);
   transition: var(--transition);
 }
 
@@ -357,8 +355,6 @@ a {
 
 .about-pic-wrapper:hover .about-pic,
 .about-pic-wrapper:hover::before {
-  filter: none;
-  mix-blend-mode: normal;
   background-color: transparent;
 }
 
@@ -494,9 +490,7 @@ a {
   grid-row: 1 / -1;
   position: relative;
   z-index: 1;
-  /* Hover Tint Logic */
   border-radius: 4px;
-  background-color: var(--accent-mint);
 }
 
 .project-card:nth-of-type(even) .project-image {
@@ -508,16 +502,12 @@ a {
   max-width: 100%;
   vertical-align: middle;
   border-radius: 4px;
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1) brightness(90%);
   transition: var(--transition);
 }
 
 .project-image:hover,
 .project-image:hover img {
   background-color: transparent;
-  mix-blend-mode: normal;
-  filter: none;
 }
 
 /* --- CONTACT --- */
