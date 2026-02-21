@@ -1,41 +1,59 @@
-// Smooth scroll for navigation
-const navLinks = document.querySelectorAll('.nav-links a');
-const navbar = document.querySelector('.navbar');
-navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    const targetId = this.getAttribute('href');
-    if (targetId.startsWith('#')) {
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const navHeight = navbar ? navbar.offsetHeight : 0;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+/*===== MENU SHOW =====*/
+const showMenu = (toggleId, navId) => {
+  const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show')
+    })
+  }
+}
+showMenu('nav-toggle', 'nav-menu')
+
+/*==================== REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction() {
+  const navMenu = document.getElementById('nav-menu')
+  // When we click on each nav__link, we remove the show-menu class
+  navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+  const scrollDown = window.scrollY
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute('id'),
+      sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+    if (sectionsClass) {
+      if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+        sectionsClass.classList.add('active-link')
+      } else {
+        sectionsClass.classList.remove('active-link')
       }
     }
-  });
+  })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2000,
+  delay: 200,
+  //     reset: true
 });
 
-// Intersection Observer for Smooth "Jumping" Scroll Animations
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.15 // Triggers when 15% of the element is visible
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      // Elements animate slightly up and fade in smoothly
-      observer.unobserve(entry.target); 
-    }
-  });
-}, observerOptions);
-
-// Observe all elements with the 'reveal' class
-document.querySelectorAll('.reveal').forEach(element => {
-  observer.observe(element);
-});
-
-console.log("Portfolio loaded with scroll animations.");
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
+sr.reveal('.home__social-icon', { interval: 200 });
+sr.reveal('.skills__data, .work__img, .contact__input, .exp__item', { interval: 200 }); 
