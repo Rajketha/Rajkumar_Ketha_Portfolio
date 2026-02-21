@@ -216,10 +216,11 @@
       <h2 class="section-title">Contact</h2>
 
       <div class="contact__container bd-grid">
-        <form action="mailto:ketharaj0@gmail.com" method="GET" class="contact__form" enctype="text/plain">
-          <input type="text" placeholder="Name" class="contact__input">
-          <input type="email" placeholder="Email" class="contact__input">
-          <textarea placeholder="Your Message" cols="0" rows="10" class="contact__input"></textarea>
+        <form action="mailto:ketharaj0@gmail.com" method="POST" class="contact__form" enctype="text/plain">
+          <input type="text" name="Name" placeholder="Name" class="contact__input" required>
+          <input type="email" name="Email" placeholder="Email" class="contact__input" required>
+          <textarea name="Message" placeholder="Your Message" cols="0" rows="10" class="contact__input"
+            required></textarea>
           <button type="submit" class="button contact__button">Send Message</button>
         </form>
       </div>
